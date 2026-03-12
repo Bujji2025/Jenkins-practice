@@ -12,10 +12,11 @@ spec:
       labels:
         app: jenkins-practice
     spec:
+      imagePullSecrets:
+      - name: registry-credentials
       containers:
       - name: jenkins-practice
         image: docker-host:5000/jenkins-practice:latest
         ports:
         - containerPort: 8080
-        
 
