@@ -1,0 +1,23 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-practice
+  labels:
+    app: jenkins-practice
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: jenkins-practice
+  template:
+    metadata:
+      labels:
+        app: jenkins-practice
+    spec:
+      containers:
+      - name: jenkins-practice
+        image: localhost:5000/jenkins-practice:latest
+        ports:
+        - containerPort: 8080
+        
+
