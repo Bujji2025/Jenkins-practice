@@ -7,8 +7,3 @@ public class App {
         return a + b;
     }
 }
-```
-
-Then:
-```
-Ctrl + S  →  Save the file
