@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REGISTRY_URL = 'localhost:5000'
+        REGISTRY_URL = 'docker-host:5000'
         IMAGE_NAME   = 'jenkins-practice'
         IMAGE_TAG    = "${env.BUILD_NUMBER}"
     }
@@ -48,6 +48,9 @@ pipeline {
             steps {
                 echo '========== Stage 4: Build Docker Image =========='
                 sh """
+                    docker login docker-host:5000 \
+                        -u dock_user \
+                        -p dock_password
                     docker build \
                       -t ${REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG} \
                       -t ${REGISTRY_URL}/${IMAGE_NAME}:latest \
