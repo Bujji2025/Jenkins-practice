@@ -1,13 +1,11 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-practice
-  labels:
-    app: jenkins-practice
 spec:
   replicas: 2
   selector:
-    matchlabels:
+    matchLabels:
       app: jenkins-practice
   template:
     metadata:
