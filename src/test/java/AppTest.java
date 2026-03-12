@@ -14,8 +14,3 @@ public class AppTest {
         assertEquals(0, app.add(-1, 1));
     }
 }
-```
-
-Then:
-```
-Ctrl + S  →  Save the file
